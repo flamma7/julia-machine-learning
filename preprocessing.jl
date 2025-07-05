@@ -9,6 +9,7 @@ df = CSV.read("data/winequality-white.csv", DataFrame)
 # Low is <= 5
 # Medium is 6
 # High is >= 7
+# This about evenly splits the classes
 df.qualityC = ifelse.(df.quality .<= 5, :low, ifelse.(df.quality .==6, :medium, :high))
 # select!(df, Not(:quality)) # keeping the quality column for regression perhaps
 
